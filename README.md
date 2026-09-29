@@ -1,18 +1,18 @@
-<!-- ═══════════════════════════ HEADER ═══════════════════════════ -->
+<!-- ============================== HEADER ============================== -->
 <p align="center">
-  <img src="https://capsule-render.vercel.app/api?type=waving&height=300&color=0:0D0221,40:3B0764,75:9333EA,100:E879F9&text=BAHTIAR%20RIFAI&fontSize=72&fontColor=FFFFFF&fontAlignY=36&desc=Cyber%20Security%20Enthusiast%20%E2%80%A2%20AI%20Explorer%20%E2%80%A2%20Web%20Developer&descAlignY=56&descSize=18&animation=fadeIn" width="100%"/>
+  <img src="https://capsule-render.vercel.app/api?type=waving&height=300&color=0:0D0221,40:3B0764,75:9333EA,100:E879F9&text=BAHTIAR%20RIFAI&fontSize=72&fontColor=FFFFFF&fontAlignY=36&desc=Fullstack%20Developer%20%E2%80%A2%20Laravel%20Backend%20%E2%80%A2%20Vue.js&descAlignY=56&descSize=18&animation=fadeIn" width="100%"/>
 </p>
 
 <p align="center">
   <a href="https://github.com/Bahtiarrifaistudent">
-    <img src="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&weight=700&size=22&duration=2400&pause=800&color=E879F9&center=true&vCenter=true&width=900&lines=%3E+Booting+Bahtiar.exe+...;%3E+Simulating+attacks+to+build+better+defenses+%F0%9F%9B%A1%EF%B8%8F;%3E+Teaching+machines+to+understand+language+%F0%9F%A7%A0;%3E+Building+smart+solutions+for+Indramayu+%F0%9F%8F%99%EF%B8%8F;%3E+Access+granted.+Welcome+to+my+profile+%E2%9C%A8" alt="Typing SVG"/>
+    <img src="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&weight=700&size=22&duration=2400&pause=800&color=E879F9&center=true&vCenter=true&width=900&lines=%3E+php+artisan+serve+--profile=bahtiar;%3E+Crafting+clean+%26+scalable+Laravel+backends;%3E+Building+reactive+UIs+with+Vue.js;%3E+From+database+schema+to+deployment;%3E+Server+running+on+http://github.com/Bahtiarrifaistudent" alt="Typing SVG"/>
   </a>
 </p>
 
 <p align="center">
   <img src="https://komarev.com/ghpvc/?username=Bahtiarrifaistudent&style=for-the-badge&color=9333EA&label=PROFILE+VIEWS&abbreviated=true"/>
   <img src="https://img.shields.io/github/followers/Bahtiarrifaistudent?style=for-the-badge&logo=github&logoColor=white&label=Followers&color=E879F9"/>
-  <img src="https://img.shields.io/badge/Status-Learning%20%26%20Hacking%20Ethically-22D3EE?style=for-the-badge"/>
+  <img src="https://img.shields.io/badge/Focus-Laravel%20Backend-FF2D20?style=for-the-badge&logo=laravel&logoColor=white"/>
 </p>
 
 <p align="center">
@@ -23,113 +23,155 @@
 
 <img src="https://capsule-render.vercel.app/api?type=rect&height=3&color=0:0D0221,50:E879F9,100:0D0221" width="100%"/>
 
-## 💻 `$ whoami`
-
-```bash
-bahtiar@polindra:~$ cat profile.yml
-```
+## `$ php artisan about`
 
 ```yaml
 name      : Bahtiar Rifai
-campus    : Politeknik Negeri Indramayu 🎓
-role      : Student • Security Enthusiast • AI Tinkerer
-mission   : "Memahami cara sistem diserang, supaya bisa melindunginya."
-passions  :
-  - 🛡️ Cyber Security   → brute force simulation & mitigation
-  - 🧠 AI / NLP         → asisten virtual kampus berbasis NLP
-  - 🌾 Computer Vision  → deteksi & scan tanaman padi (RiceScanAI)
-  - 🏙️ Smart City       → solusi digital untuk Indramayu
-currently : Belajar lebih dalam tentang pentest, machine learning & web modern
-contact   : bachtiarrifai55@gmail.com 📫
-motto     : "Break it. Understand it. Secure it."
+campus    : Politeknik Negeri Indramayu
+role      : Fullstack Developer (Backend-oriented)
+main      : Laravel + Vue.js
+mission   : "Membangun aplikasi web yang rapi di belakang layar, nyaman di depan layar."
+focus     :
+  - REST API & arsitektur backend Laravel yang bersih dan scalable
+  - Frontend reaktif dengan Vue.js + Inertia.js
+  - Desain database relasional & optimasi query Eloquent
+  - Deployment dan workflow DevOps yang sederhana tapi andal
+contact   : bachtiarrifai55@gmail.com
+motto     : "Code it clean. Ship it right."
 ```
 
-## 🧭 Three Worlds I Live In
+## How I Build a Web App
+
+```mermaid
+flowchart LR
+    subgraph FE["FRONTEND"]
+        direction TB
+        VUE["Vue.js"] --> INERTIA["Inertia.js"]
+        BLADE["Blade + Livewire"]
+        TW["Tailwind CSS"]
+    end
+
+    subgraph BE["BACKEND - LARAVEL"]
+        direction TB
+        ROUTE["Routing & Middleware"] --> CTRL["Controller & Service Layer"]
+        CTRL --> ORM["Eloquent ORM"]
+        AUTH["Sanctum / Breeze Auth"]
+        QUEUE["Queue, Jobs & Events"]
+    end
+
+    subgraph DATA["DATA"]
+        direction TB
+        MYSQL[("MySQL")]
+        REDIS[("Redis Cache")]
+    end
+
+    subgraph OPS["DEVOPS"]
+        direction TB
+        GIT["Git & GitHub"] --> CI["GitHub Actions"]
+        CI --> DOCKER["Docker / Laravel Sail"]
+        DOCKER --> DEPLOY["Nginx + VPS"]
+    end
+
+    FE -- "HTTP / API" --> BE
+    BE --> DATA
+    OPS -. "build & deploy" .-> BE
+
+    classDef fe fill:#3B0764,stroke:#E879F9,color:#FFFFFF
+    classDef be fill:#4C0519,stroke:#FF2D20,color:#FFFFFF
+    classDef data fill:#0C4A6E,stroke:#22D3EE,color:#FFFFFF
+    classDef ops fill:#1E1B4B,stroke:#A78BFA,color:#FFFFFF
+    class VUE,INERTIA,BLADE,TW fe
+    class ROUTE,CTRL,ORM,AUTH,QUEUE be
+    class MYSQL,REDIS data
+    class GIT,CI,DOCKER,DEPLOY ops
+```
+
+## Tech Stack
 
 <table>
   <tr>
-    <td align="center" width="33%">
-      <h3>🛡️ Red & Blue</h3>
-      <sub>Mensimulasikan serangan <b>brute force</b>, lalu membangun <b>pertahanannya</b>. Karena defender terbaik adalah yang paham cara attacker berpikir.</sub>
+    <th align="center" width="33%">FRONTEND</th>
+    <th align="center" width="34%">BACKEND</th>
+    <th align="center" width="33%">DEVOPS</th>
+  </tr>
+  <tr>
+    <td align="center" valign="top">
+      <img src="https://skillicons.dev/icons?i=vue,js,html,css,tailwind,vite&perline=3&theme=dark"/>
+      <br/><br/>
+      <sub>Vue.js sebagai minat utama di sisi frontend, dipadukan dengan Inertia.js agar terhubung mulus ke Laravel.</sub>
     </td>
-    <td align="center" width="33%">
-      <h3>🧠 Machine Mind</h3>
-      <sub>Membangun <b>asisten berbasis NLP</b> untuk Polindra & mengeksplor AI untuk <b>pertanian</b> lewat RiceScanAI.</sub>
+    <td align="center" valign="top">
+      <img src="https://skillicons.dev/icons?i=laravel,php,mysql,redis,postman&perline=3&theme=dark"/>
+      <br/><br/>
+      <sub>Laravel adalah rumah saya: API, autentikasi, queue, hingga struktur kode yang maintainable.</sub>
     </td>
-    <td align="center" width="33%">
-      <h3>🏙️ Smart Builder</h3>
-      <sub>Merancang platform <b>Smart City Indramayu</b>: smart governance, waste management & layanan publik digital.</sub>
+    <td align="center" valign="top">
+      <img src="https://skillicons.dev/icons?i=git,github,githubactions,docker,nginx,linux&perline=3&theme=dark"/>
+      <br/><br/>
+      <sub>Versioning, CI/CD sederhana, containerization, sampai aplikasi online di server.</sub>
     </td>
   </tr>
 </table>
 
-## 🚀 Featured Missions
+## Laravel Ecosystem I've Explored
+
+<p align="center"><b>Starter Kit & Full-stack Glue</b></p>
+<p align="center">
+  <img src="https://img.shields.io/badge/Inertia.js-0D0221?style=flat-square&logo=inertia&logoColor=9553E9"/>
+  <img src="https://img.shields.io/badge/Livewire-0D0221?style=flat-square&logo=livewire&logoColor=FB70A9"/>
+  <img src="https://img.shields.io/badge/Laravel_Breeze-0D0221?style=flat-square&logo=laravel&logoColor=FF2D20"/>
+  <img src="https://img.shields.io/badge/Laravel_Jetstream-0D0221?style=flat-square&logo=laravel&logoColor=FF2D20"/>
+  <img src="https://img.shields.io/badge/Filament-0D0221?style=flat-square&logo=laravel&logoColor=FDAE4B"/>
+</p>
+
+<p align="center"><b>Auth & Security</b></p>
+<p align="center">
+  <img src="https://img.shields.io/badge/Laravel_Sanctum-0D0221?style=flat-square&logo=laravel&logoColor=FF2D20"/>
+  <img src="https://img.shields.io/badge/Laravel_Socialite-0D0221?style=flat-square&logo=laravel&logoColor=FF2D20"/>
+  <img src="https://img.shields.io/badge/Spatie_Permission-0D0221?style=flat-square&logo=laravel&logoColor=E879F9"/>
+</p>
+
+<p align="center"><b>Data, Report & Utility</b></p>
+<p align="center">
+  <img src="https://img.shields.io/badge/Laravel_Excel-0D0221?style=flat-square&logo=microsoftexcel&logoColor=217346"/>
+  <img src="https://img.shields.io/badge/DomPDF-0D0221?style=flat-square&logo=adobeacrobatreader&logoColor=EC1C24"/>
+  <img src="https://img.shields.io/badge/Spatie_Media_Library-0D0221?style=flat-square&logo=laravel&logoColor=E879F9"/>
+  <img src="https://img.shields.io/badge/Yajra_DataTables-0D0221?style=flat-square&logo=laravel&logoColor=22D3EE"/>
+</p>
+
+<p align="center"><b>Dev Tools & Testing</b></p>
+<p align="center">
+  <img src="https://img.shields.io/badge/Laravel_Sail-0D0221?style=flat-square&logo=docker&logoColor=2496ED"/>
+  <img src="https://img.shields.io/badge/Laravel_Telescope-0D0221?style=flat-square&logo=laravel&logoColor=A78BFA"/>
+  <img src="https://img.shields.io/badge/Debugbar-0D0221?style=flat-square&logo=laravel&logoColor=F4645F"/>
+  <img src="https://img.shields.io/badge/Pest_PHP-0D0221?style=flat-square&logo=php&logoColor=F472B6"/>
+  <img src="https://img.shields.io/badge/PHPUnit-0D0221?style=flat-square&logo=php&logoColor=777BB4"/>
+</p>
+
+## Featured Projects
 
 <p align="center">
-  <a href="https://github.com/Bahtiarrifaistudent/Simulasi-Brute-Force-attack">
-    <img src="https://github-readme-stats.vercel.app/api/pin/?username=Bahtiarrifaistudent&repo=Simulasi-Brute-Force-attack&hide_border=true&bg_color=0D0221&title_color=E879F9&icon_color=22D3EE&text_color=C4B5FD" width="49%"/>
-  </a>
-  <a href="https://github.com/Bahtiarrifaistudent/Penanganan-Brute-Force-Attack">
-    <img src="https://github-readme-stats.vercel.app/api/pin/?username=Bahtiarrifaistudent&repo=Penanganan-Brute-Force-Attack&hide_border=true&bg_color=0D0221&title_color=E879F9&icon_color=22D3EE&text_color=C4B5FD" width="49%"/>
-  </a>
-  <a href="https://github.com/Bahtiarrifaistudent/Asisten-20berbasis-20NLP-20Polindra">
-    <img src="https://github-readme-stats.vercel.app/api/pin/?username=Bahtiarrifaistudent&repo=Asisten-20berbasis-20NLP-20Polindra&hide_border=true&bg_color=0D0221&title_color=E879F9&icon_color=22D3EE&text_color=C4B5FD" width="49%"/>
+  <a href="https://github.com/Bahtiarrifaistudent/Floral-Innovators">
+    <img src="https://github-readme-stats.vercel.app/api/pin/?username=Bahtiarrifaistudent&repo=Floral-Innovators&hide_border=true&bg_color=0D0221&title_color=E879F9&icon_color=22D3EE&text_color=C4B5FD" width="49%"/>
   </a>
   <a href="https://github.com/Bahtiarrifaistudent/smartcity-indramayu">
     <img src="https://github-readme-stats.vercel.app/api/pin/?username=Bahtiarrifaistudent&repo=smartcity-indramayu&hide_border=true&bg_color=0D0221&title_color=E879F9&icon_color=22D3EE&text_color=C4B5FD" width="49%"/>
   </a>
-  <a href="https://github.com/Bahtiarrifaistudent/ricescanai">
-    <img src="https://github-readme-stats.vercel.app/api/pin/?username=Bahtiarrifaistudent&repo=ricescanai&hide_border=true&bg_color=0D0221&title_color=E879F9&icon_color=22D3EE&text_color=C4B5FD" width="49%"/>
-  </a>
-  <a href="https://github.com/Bahtiarrifaistudent/Floral-Innovators">
-    <img src="https://github-readme-stats.vercel.app/api/pin/?username=Bahtiarrifaistudent&repo=Floral-Innovators&hide_border=true&bg_color=0D0221&title_color=E879F9&icon_color=22D3EE&text_color=C4B5FD" width="49%"/>
-  </a>
 </p>
 
-## 🧰 Arsenal
-
-<p align="center"><b>⚔️ Languages & Web</b></p>
-<p align="center">
-  <img src="https://skillicons.dev/icons?i=py,php,laravel,html,css,js,tailwind,mysql&theme=dark" />
-</p>
-
-<p align="center"><b>🧠 AI & Data</b></p>
-<p align="center">
-  <img src="https://skillicons.dev/icons?i=sklearn,tensorflow,pytorch&theme=dark" />
-  <br/>
-  <img src="https://img.shields.io/badge/Jupyter-0D0221?style=flat-square&logo=jupyter&logoColor=F37626"/>
-  <img src="https://img.shields.io/badge/Pandas-0D0221?style=flat-square&logo=pandas&logoColor=E879F9"/>
-  <img src="https://img.shields.io/badge/NumPy-0D0221?style=flat-square&logo=numpy&logoColor=22D3EE"/>
-  <img src="https://img.shields.io/badge/NLTK-0D0221?style=flat-square&logo=python&logoColor=FFD43B"/>
-</p>
-
-<p align="center"><b>🛡️ Security Toolkit</b></p>
-<p align="center">
-  <img src="https://img.shields.io/badge/Kali_Linux-0D0221?style=flat-square&logo=kalilinux&logoColor=557C94"/>
-  <img src="https://img.shields.io/badge/Wireshark-0D0221?style=flat-square&logo=wireshark&logoColor=1679A7"/>
-  <img src="https://img.shields.io/badge/Nmap-0D0221?style=flat-square&logo=gnu-bash&logoColor=22D3EE"/>
-  <img src="https://img.shields.io/badge/Hydra-0D0221?style=flat-square&logo=hackthebox&logoColor=9FEF00"/>
-  <img src="https://img.shields.io/badge/OWASP-0D0221?style=flat-square&logo=owasp&logoColor=white"/>
-</p>
-
-<p align="center"><b>🛠️ Tools</b></p>
-<p align="center">
-  <img src="https://skillicons.dev/icons?i=git,github,linux,bash,vscode,figma&theme=dark" />
-</p>
-
-## 🗺️ Quest Log 2026
+## Roadmap 2026
 
 ```diff
-+ [✔] Simulasi Brute Force Attack dengan Python
-+ [✔] Implementasi teknik penanganan Brute Force
-+ [✔] Asisten virtual berbasis NLP untuk Polindra
-+ [✔] Prototype Smart City Indramayu
-! [⏳] RiceScanAI — AI untuk petani padi
-! [⏳] Mendalami Web Application Security (OWASP Top 10)
-- [🔒] Sertifikasi keamanan siber pertama... coming soon
++ [x] Menguasai dasar Laravel: routing, Eloquent, Blade, migration
++ [x] Membangun aplikasi CRUD dengan autentikasi & role permission
++ [x] Mencoba berbagai library ekosistem Laravel
+! [ ] Membangun SPA dengan Laravel + Inertia.js + Vue.js
+! [ ] REST API yang terdokumentasi dan teruji (Pest)
+! [ ] Deployment otomatis dengan Docker & GitHub Actions
+- [ ] Laravel Certified Developer ... coming soon
 ```
 
-## 📊 System Monitor
+## GitHub Stats
 
 <p align="center">
   <img src="https://github-readme-stats.vercel.app/api?username=Bahtiarrifaistudent&show_icons=true&hide_border=true&bg_color=0D0221&title_color=E879F9&icon_color=22D3EE&text_color=C4B5FD&rank_icon=github&count_private=true" height="170"/>
@@ -145,20 +187,53 @@ motto     : "Break it. Understand it. Secure it."
 </p>
 
 <details>
-<summary><b>⏰ Tips jaga streak: WIB vs UTC (klik untuk buka)</b></summary>
+<summary><b>Tips jaga streak: WIB vs UTC (klik untuk buka)</b></summary>
 <br/>
 
 GitHub mencatat kontribusi dalam **UTC**, sedangkan kita hidup di **WIB (UTC+7)**.
 
 | Commit di WIB | Tercatat GitHub (UTC) |
 | --- | --- |
-| 10 Mei, 00:00 – 06:59 | 9 Mei ❌ masih hari kemarin |
-| 10 Mei, 07:00 – 23:59 | 10 Mei ✅ |
+| 10 Mei, 00:00 - 06:59 | 9 Mei (masih hari kemarin) |
+| 10 Mei, 07:00 - 23:59 | 10 Mei |
 
-> 💡 Mau streak aman? Commit setelah **jam 07.00 WIB**.
+> Mau streak aman? Commit setelah **jam 07.00 WIB**.
 </details>
 
-## 🐍 Snake Eats My Contributions
+<!-- ======================= OPSIONAL: hapus blok <details> ini jika tidak diperlukan ======================= -->
+<details>
+<summary><b>Eksplorasi Lain (opsional): Cyber Security & AI</b></summary>
+<br/>
+
+Di luar web development, saya juga pernah bereksperimen di bidang keamanan siber dan kecerdasan buatan.
+
+<p align="center">
+  <a href="https://github.com/Bahtiarrifaistudent/Simulasi-Brute-Force-attack">
+    <img src="https://github-readme-stats.vercel.app/api/pin/?username=Bahtiarrifaistudent&repo=Simulasi-Brute-Force-attack&hide_border=true&bg_color=0D0221&title_color=E879F9&icon_color=22D3EE&text_color=C4B5FD" width="49%"/>
+  </a>
+  <a href="https://github.com/Bahtiarrifaistudent/Penanganan-Brute-Force-Attack">
+    <img src="https://github-readme-stats.vercel.app/api/pin/?username=Bahtiarrifaistudent&repo=Penanganan-Brute-Force-Attack&hide_border=true&bg_color=0D0221&title_color=E879F9&icon_color=22D3EE&text_color=C4B5FD" width="49%"/>
+  </a>
+  <a href="https://github.com/Bahtiarrifaistudent/Asisten-20berbasis-20NLP-20Polindra">
+    <img src="https://github-readme-stats.vercel.app/api/pin/?username=Bahtiarrifaistudent&repo=Asisten-20berbasis-20NLP-20Polindra&hide_border=true&bg_color=0D0221&title_color=E879F9&icon_color=22D3EE&text_color=C4B5FD" width="49%"/>
+  </a>
+  <a href="https://github.com/Bahtiarrifaistudent/ricescanai">
+    <img src="https://github-readme-stats.vercel.app/api/pin/?username=Bahtiarrifaistudent&repo=ricescanai&hide_border=true&bg_color=0D0221&title_color=E879F9&icon_color=22D3EE&text_color=C4B5FD" width="49%"/>
+  </a>
+</p>
+
+<p align="center">
+  <img src="https://skillicons.dev/icons?i=py,sklearn,tensorflow&theme=dark"/>
+  <br/>
+  <img src="https://img.shields.io/badge/Jupyter-0D0221?style=flat-square&logo=jupyter&logoColor=F37626"/>
+  <img src="https://img.shields.io/badge/Kali_Linux-0D0221?style=flat-square&logo=kalilinux&logoColor=557C94"/>
+  <img src="https://img.shields.io/badge/Wireshark-0D0221?style=flat-square&logo=wireshark&logoColor=1679A7"/>
+  <img src="https://img.shields.io/badge/OWASP-0D0221?style=flat-square&logo=owasp&logoColor=white"/>
+</p>
+</details>
+<!-- ======================= akhir blok opsional ======================= -->
+
+## Contribution Snake
 
 <p align="center">
   <picture>
@@ -173,15 +248,15 @@ GitHub mencatat kontribusi dalam **UTC**, sedangkan kita hidup di **WIB (UTC+7)*
 <table align="center">
   <tr>
     <td align="center">
-      <i>"Setiap sistem punya celah. Tugasku bukan untuk merusaknya,<br/>tapi menemukannya lebih dulu — lalu menutupnya."</i>
+      <i>"Frontend yang indah membuat orang datang,<br/>backend yang kokoh membuat mereka bertahan."</i>
       <br/><br/>
-      <b>— Bahtiar Rifai</b>
+      <b>- Bahtiar Rifai</b>
     </td>
   </tr>
 </table>
 
 <p align="center">
-  <img src="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&size=16&duration=3000&pause=1000&color=22D3EE&center=true&vCenter=true&width=600&lines=%5B+session+closed+%5D+Terima+kasih+sudah+mampir!+%E2%9C%A8;Jangan+lupa+follow+%26+kasih+%E2%AD%90+ya!" />
+  <img src="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&size=16&duration=3000&pause=1000&color=22D3EE&center=true&vCenter=true&width=600&lines=Process+finished+with+exit+code+0;Terima+kasih+sudah+mampir!;Jangan+lupa+follow+ya!" />
 </p>
 
 <img src="https://capsule-render.vercel.app/api?type=waving&height=130&section=footer&color=0:E879F9,50:9333EA,100:0D0221" width="100%"/>
