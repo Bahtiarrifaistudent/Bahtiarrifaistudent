@@ -5,7 +5,7 @@
 
 <p align="center">
   <a href="https://github.com/Bahtiarrifaistudent">
-    <img src="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&weight=700&size=22&duration=2400&pause=800&color=E879F9&center=true&vCenter=true&width=900&lines=%3E+php+artisan+serve+--profile=bahtiar;%3E+Crafting+clean+%26+scalable+Laravel+backends;%3E+Building+reactive+UIs+with+Vue.js;%3E+From+database+schema+to+deployment;%3E+Server+running+on+http://github.com/Bahtiarrifaistudent" alt="Typing SVG"/>
+    <img src="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&weight=700&size=22&duration=2400&pause=800&color=E879F9&center=true&vCenter=true&width=900&lines=%3E+php+artisan+serve+--profile=bahtiar;%3E+Laravel+12+%2B+Inertia+%2B+Vue+3;%3E+Realtime+apps+with+Laravel+Reverb;%3E+Clean+APIs%2C+documented+automatically;%3E+Server+running+on+github.com/Bahtiarrifaistudent" alt="Typing SVG"/>
   </a>
 </p>
 
@@ -29,61 +29,71 @@
 name      : Bahtiar Rifai
 campus    : Politeknik Negeri Indramayu
 role      : Fullstack Developer (Backend-oriented)
-main      : Laravel + Vue.js
+main      : Laravel 12 + Inertia.js + Vue 3
 mission   : "Membangun aplikasi web yang rapi di belakang layar, nyaman di depan layar."
 focus     :
-  - REST API & arsitektur backend Laravel yang bersih dan scalable
-  - Frontend reaktif dengan Vue.js + Inertia.js
-  - Desain database relasional & optimasi query Eloquent
-  - Deployment dan workflow DevOps yang sederhana tapi andal
+  - Arsitektur backend Laravel: API, autentikasi, realtime broadcasting
+  - SPA modern dengan Inertia.js + Vue 3 Composition API
+  - Desain database relasional & Eloquent ORM
+  - Dokumentasi API otomatis (OpenAPI)
 contact   : bachtiarrifai55@gmail.com
 motto     : "Code it clean. Ship it right."
 ```
 
 ## How I Build a Web App
 
+<sub>Gambaran arsitektur dari project terbesar saya: <b>Monitoring App</b>, sistem monitoring perangkat realtime berbasis Laravel + Vue.</sub>
+
 ```mermaid
 flowchart LR
     subgraph FE["FRONTEND"]
         direction TB
-        VUE["Vue.js"] --> INERTIA["Inertia.js"]
-        BLADE["Blade + Livewire"]
-        TW["Tailwind CSS"]
+        VUE["Vue 3 - Composition API"] --> INERTIA["Inertia.js"]
+        TW["Tailwind CSS v4"]
+        VITE["Vite"]
     end
 
-    subgraph BE["BACKEND - LARAVEL"]
+    subgraph BE["BACKEND - LARAVEL 12 / PHP 8.4"]
         direction TB
-        ROUTE["Routing & Middleware"] --> CTRL["Controller & Service Layer"]
-        CTRL --> ORM["Eloquent ORM"]
-        AUTH["Sanctum / Breeze Auth"]
-        QUEUE["Queue, Jobs & Events"]
+        ROUTE["Routing, Middleware, FormRequest"] --> ORM["Eloquent ORM + Migrations"]
+        AUTH["Sanctum + Token Guard + Roles"]
+        REVERB["Reverb WebSocket + Broadcasting"]
+        DOCS["Scramble + Scalar API Docs"]
     end
 
-    subgraph DATA["DATA"]
+    subgraph DATA["DATA & STORAGE"]
         direction TB
         MYSQL[("MySQL")]
-        REDIS[("Redis Cache")]
+        STORE[("Laravel Storage")]
     end
 
-    subgraph OPS["DEVOPS"]
+    subgraph AGENT["DESKTOP AGENT"]
         direction TB
-        GIT["Git & GitHub"] --> CI["GitHub Actions"]
-        CI --> DOCKER["Docker / Laravel Sail"]
-        DOCKER --> DEPLOY["Nginx + VPS"]
+        PY["Python Agent"] --> RTC["WebRTC Remote Desktop"]
     end
 
-    FE -- "HTTP / API" --> BE
+    subgraph OPS["DEV ENV & TOOLING"]
+        direction TB
+        LARAGON["Laragon"] --> PKG["Composer + npm"]
+        PKG --> GIT["Git & GitHub"]
+    end
+
+    FE -- "Inertia request" --> BE
+    BE -- "private channel" --> FE
+    AGENT -- "REST API + Sanctum" --> BE
     BE --> DATA
-    OPS -. "build & deploy" .-> BE
+    OPS -. "build & version" .-> BE
 
     classDef fe fill:#3B0764,stroke:#E879F9,color:#FFFFFF
     classDef be fill:#4C0519,stroke:#FF2D20,color:#FFFFFF
     classDef data fill:#0C4A6E,stroke:#22D3EE,color:#FFFFFF
+    classDef agent fill:#14532D,stroke:#4ADE80,color:#FFFFFF
     classDef ops fill:#1E1B4B,stroke:#A78BFA,color:#FFFFFF
-    class VUE,INERTIA,BLADE,TW fe
-    class ROUTE,CTRL,ORM,AUTH,QUEUE be
-    class MYSQL,REDIS data
-    class GIT,CI,DOCKER,DEPLOY ops
+    class VUE,INERTIA,TW,VITE fe
+    class ROUTE,ORM,AUTH,REVERB,DOCS be
+    class MYSQL,STORE data
+    class PY,RTC agent
+    class LARAGON,PKG,GIT ops
 ```
 
 ## Tech Stack
@@ -92,84 +102,144 @@ flowchart LR
   <tr>
     <th align="center" width="33%">FRONTEND</th>
     <th align="center" width="34%">BACKEND</th>
-    <th align="center" width="33%">DEVOPS</th>
+    <th align="center" width="33%">DEVOPS & TOOLING</th>
   </tr>
   <tr>
     <td align="center" valign="top">
-      <img src="https://skillicons.dev/icons?i=vue,js,html,css,tailwind,vite&perline=3&theme=dark"/>
+      <img src="https://skillicons.dev/icons?i=vue,js,tailwind,vite,html,css&perline=3&theme=dark"/>
       <br/><br/>
-      <sub>Vue.js sebagai minat utama di sisi frontend, dipadukan dengan Inertia.js agar terhubung mulus ke Laravel.</sub>
+      <sub>Vue 3 dengan <code>&lt;script setup&gt;</code>, <code>useForm</code> & <code>usePage</code>, terhubung ke Laravel lewat Inertia.js.</sub>
     </td>
     <td align="center" valign="top">
-      <img src="https://skillicons.dev/icons?i=laravel,php,mysql,redis,postman&perline=3&theme=dark"/>
+      <img src="https://skillicons.dev/icons?i=laravel,php,mysql&perline=3&theme=dark"/>
       <br/><br/>
-      <sub>Laravel adalah rumah saya: API, autentikasi, queue, hingga struktur kode yang maintainable.</sub>
+      <sub>Laravel 12 di atas PHP 8.4: Eloquent, Blade, validasi, autentikasi API, hingga WebSocket.</sub>
     </td>
     <td align="center" valign="top">
-      <img src="https://skillicons.dev/icons?i=git,github,githubactions,docker,nginx,linux&perline=3&theme=dark"/>
+      <img src="https://skillicons.dev/icons?i=git,github,vscode&perline=3&theme=dark"/>
+      <br/>
+      <img src="https://img.shields.io/badge/Laragon-0D0221?style=flat-square&logo=laravel&logoColor=0E83CD"/>
+      <img src="https://img.shields.io/badge/Composer-0D0221?style=flat-square&logo=composer&logoColor=C4B5FD"/>
+      <img src="https://img.shields.io/badge/npm-0D0221?style=flat-square&logo=npm&logoColor=CB3837"/>
       <br/><br/>
-      <sub>Versioning, CI/CD sederhana, containerization, sampai aplikasi online di server.</sub>
+      <sub>Lingkungan lokal Laragon, dependency lewat Composer & npm, versioning dengan Git branch.</sub>
     </td>
   </tr>
 </table>
 
-## Laravel Ecosystem I've Explored
+## Laravel Ecosystem I've Used
 
-<p align="center"><b>Starter Kit & Full-stack Glue</b></p>
+<p align="center"><b>Full-stack Glue</b></p>
 <p align="center">
   <img src="https://img.shields.io/badge/Inertia.js-0D0221?style=flat-square&logo=inertia&logoColor=9553E9"/>
-  <img src="https://img.shields.io/badge/Livewire-0D0221?style=flat-square&logo=livewire&logoColor=FB70A9"/>
-  <img src="https://img.shields.io/badge/Laravel_Breeze-0D0221?style=flat-square&logo=laravel&logoColor=FF2D20"/>
-  <img src="https://img.shields.io/badge/Laravel_Jetstream-0D0221?style=flat-square&logo=laravel&logoColor=FF2D20"/>
-  <img src="https://img.shields.io/badge/Filament-0D0221?style=flat-square&logo=laravel&logoColor=FDAE4B"/>
+  <img src="https://img.shields.io/badge/Blade-0D0221?style=flat-square&logo=laravel&logoColor=FF2D20"/>
+  <img src="https://img.shields.io/badge/Vite-0D0221?style=flat-square&logo=vite&logoColor=646CFF"/>
 </p>
 
-<p align="center"><b>Auth & Security</b></p>
+<p align="center"><b>Auth & Access Control</b></p>
 <p align="center">
   <img src="https://img.shields.io/badge/Laravel_Sanctum-0D0221?style=flat-square&logo=laravel&logoColor=FF2D20"/>
-  <img src="https://img.shields.io/badge/Laravel_Socialite-0D0221?style=flat-square&logo=laravel&logoColor=FF2D20"/>
-  <img src="https://img.shields.io/badge/Spatie_Permission-0D0221?style=flat-square&logo=laravel&logoColor=E879F9"/>
+  <img src="https://img.shields.io/badge/Token_Guard-0D0221?style=flat-square&logo=laravel&logoColor=E879F9"/>
+  <img src="https://img.shields.io/badge/Role_Management-0D0221?style=flat-square&logo=laravel&logoColor=22D3EE"/>
 </p>
 
-<p align="center"><b>Data, Report & Utility</b></p>
+<p align="center"><b>Realtime & Communication</b></p>
 <p align="center">
-  <img src="https://img.shields.io/badge/Laravel_Excel-0D0221?style=flat-square&logo=microsoftexcel&logoColor=217346"/>
-  <img src="https://img.shields.io/badge/DomPDF-0D0221?style=flat-square&logo=adobeacrobatreader&logoColor=EC1C24"/>
-  <img src="https://img.shields.io/badge/Spatie_Media_Library-0D0221?style=flat-square&logo=laravel&logoColor=E879F9"/>
-  <img src="https://img.shields.io/badge/Yajra_DataTables-0D0221?style=flat-square&logo=laravel&logoColor=22D3EE"/>
+  <img src="https://img.shields.io/badge/Laravel_Reverb-0D0221?style=flat-square&logo=laravel&logoColor=FF2D20"/>
+  <img src="https://img.shields.io/badge/Broadcasting_%26_Events-0D0221?style=flat-square&logo=laravel&logoColor=E879F9"/>
+  <img src="https://img.shields.io/badge/WebRTC-0D0221?style=flat-square&logo=webrtc&logoColor=white"/>
 </p>
 
-<p align="center"><b>Dev Tools & Testing</b></p>
+<p align="center"><b>API Documentation</b></p>
 <p align="center">
-  <img src="https://img.shields.io/badge/Laravel_Sail-0D0221?style=flat-square&logo=docker&logoColor=2496ED"/>
-  <img src="https://img.shields.io/badge/Laravel_Telescope-0D0221?style=flat-square&logo=laravel&logoColor=A78BFA"/>
-  <img src="https://img.shields.io/badge/Debugbar-0D0221?style=flat-square&logo=laravel&logoColor=F4645F"/>
-  <img src="https://img.shields.io/badge/Pest_PHP-0D0221?style=flat-square&logo=php&logoColor=F472B6"/>
-  <img src="https://img.shields.io/badge/PHPUnit-0D0221?style=flat-square&logo=php&logoColor=777BB4"/>
+  <img src="https://img.shields.io/badge/Scramble-0D0221?style=flat-square&logo=laravel&logoColor=A78BFA"/>
+  <img src="https://img.shields.io/badge/OpenAPI-0D0221?style=flat-square&logo=openapiinitiative&logoColor=6BA539"/>
+  <img src="https://img.shields.io/badge/Scalar-0D0221?style=flat-square&logo=swagger&logoColor=22D3EE"/>
 </p>
 
-## Featured Projects
-
+<p align="center"><b>Media & File</b></p>
 <p align="center">
-  <a href="https://github.com/Bahtiarrifaistudent/Floral-Innovators">
-    <img src="https://github-readme-stats.vercel.app/api/pin/?username=Bahtiarrifaistudent&repo=Floral-Innovators&hide_border=true&bg_color=0D0221&title_color=E879F9&icon_color=22D3EE&text_color=C4B5FD" width="49%"/>
-  </a>
-  <a href="https://github.com/Bahtiarrifaistudent/smartcity-indramayu">
-    <img src="https://github-readme-stats.vercel.app/api/pin/?username=Bahtiarrifaistudent&repo=smartcity-indramayu&hide_border=true&bg_color=0D0221&title_color=E879F9&icon_color=22D3EE&text_color=C4B5FD" width="49%"/>
-  </a>
+  <img src="https://img.shields.io/badge/Laravel_Storage-0D0221?style=flat-square&logo=laravel&logoColor=FF2D20"/>
+  <img src="https://img.shields.io/badge/GD_Library_(WebP)-0D0221?style=flat-square&logo=php&logoColor=777BB4"/>
+  <img src="https://img.shields.io/badge/CSV_%26_Excel_Export-0D0221?style=flat-square&logo=microsoftexcel&logoColor=217346"/>
 </p>
+
+## Project Highlight: Monitoring App
+
+<table>
+  <tr>
+    <td>
+      <b>Sistem monitoring perangkat realtime</b> berbasis Laravel 12 + Inertia + Vue 3, dengan desktop agent Python yang berkomunikasi lewat REST API.
+      <br/><br/>
+      <b>Yang saya bangun di dalamnya:</b>
+      <ul>
+        <li>REST API untuk agent dengan autentikasi <b>Laravel Sanctum</b>, plus token guard terpisah untuk API admin</li>
+        <li>Update status realtime lewat <b>Laravel Reverb</b> (private channel per device) dengan fallback HTTP polling</li>
+        <li><b>Remote desktop</b> melalui WebRTC signaling (offer / answer / ICE)</li>
+        <li><b>Geofencing</b> dengan algoritma ray-casting buatan sendiri untuk deteksi masuk/keluar zona</li>
+        <li><b>Policy engine</b> per device/group: screenshot, URL/USB/download filter, kontrol WiFi, hotspot & Bluetooth</li>
+        <li>Konversi screenshot ke <b>WebP</b> dengan GD Library, report CSV & Excel per tab</li>
+        <li>Dokumentasi API otomatis dengan <b>Scramble + Scalar</b></li>
+      </ul>
+      <sub><b>Agent:</b> Python, Tkinter, pywin32, psutil, mss, Pillow, requests</sub>
+    </td>
+  </tr>
+</table>
 
 ## Roadmap 2026
 
 ```diff
-+ [x] Menguasai dasar Laravel: routing, Eloquent, Blade, migration
-+ [x] Membangun aplikasi CRUD dengan autentikasi & role permission
-+ [x] Mencoba berbagai library ekosistem Laravel
-! [ ] Membangun SPA dengan Laravel + Inertia.js + Vue.js
-! [ ] REST API yang terdokumentasi dan teruji (Pest)
-! [ ] Deployment otomatis dengan Docker & GitHub Actions
-- [ ] Laravel Certified Developer ... coming soon
++ [x] Membangun aplikasi Laravel 12 + Inertia.js + Vue 3
++ [x] REST API dengan Sanctum & dokumentasi OpenAPI otomatis
++ [x] Fitur realtime dengan Laravel Reverb & Broadcasting
++ [x] Integrasi WebRTC untuk remote desktop
+! [ ] Automated testing untuk API (Pest / PHPUnit)
+! [ ] Containerization dengan Docker
+! [ ] CI/CD & deployment otomatis ke server
 ```
+
+## Other Experience
+
+<sub>Di luar web development, saya juga pernah mengerjakan project di bidang keamanan siber, AI, dan smart city.</sub>
+
+<table>
+  <tr>
+    <th align="center" width="33%">CYBER SECURITY</th>
+    <th align="center" width="34%">AI & DATA</th>
+    <th align="center" width="33%">WEB PROJECTS</th>
+  </tr>
+  <tr>
+    <td valign="top">
+      <sub>
+        <b><a href="https://github.com/Bahtiarrifaistudent/Simulasi-Brute-Force-attack">Simulasi Brute Force Attack</a></b><br/>
+        Simulasi serangan brute force dengan Python.<br/><br/>
+        <b><a href="https://github.com/Bahtiarrifaistudent/Penanganan-Brute-Force-Attack">Penanganan Brute Force Attack</a></b><br/>
+        Implementasi teknik mitigasinya.
+      </sub>
+    </td>
+    <td valign="top">
+      <sub>
+        <b><a href="https://github.com/Bahtiarrifaistudent/Asisten-20berbasis-20NLP-20Polindra">Asisten berbasis NLP Polindra</a></b><br/>
+        Asisten virtual kampus berbasis Natural Language Processing (Jupyter Notebook).<br/><br/>
+        <b><a href="https://github.com/Bahtiarrifaistudent/ricescanai">RiceScanAI</a></b><br/>
+        Eksplorasi AI untuk tanaman padi.
+      </sub>
+    </td>
+    <td valign="top">
+      <sub>
+        <b><a href="https://github.com/Bahtiarrifaistudent/smartcity-indramayu">Smart City Indramayu</a></b><br/>
+        Prototype platform smart governance, waste management & layanan publik.<br/><br/>
+        <b><a href="https://github.com/Bahtiarrifaistudent/Floral-Innovators">Floral Innovators</a></b><br/>
+        Aplikasi web berbasis Laravel Blade.
+      </sub>
+    </td>
+  </tr>
+  <tr>
+    <td align="center"><img src="https://skillicons.dev/icons?i=py,linux&theme=dark"/></td>
+    <td align="center"><img src="https://skillicons.dev/icons?i=py&theme=dark"/> <img src="https://img.shields.io/badge/Jupyter-0D0221?style=flat-square&logo=jupyter&logoColor=F37626"/></td>
+    <td align="center"><img src="https://skillicons.dev/icons?i=laravel,html,css&theme=dark"/></td>
+  </tr>
+</table>
 
 ## GitHub Stats
 
@@ -199,39 +269,6 @@ GitHub mencatat kontribusi dalam **UTC**, sedangkan kita hidup di **WIB (UTC+7)*
 
 > Mau streak aman? Commit setelah **jam 07.00 WIB**.
 </details>
-
-<!-- ======================= OPSIONAL: hapus blok <details> ini jika tidak diperlukan ======================= -->
-<details>
-<summary><b>Eksplorasi Lain (opsional): Cyber Security & AI</b></summary>
-<br/>
-
-Di luar web development, saya juga pernah bereksperimen di bidang keamanan siber dan kecerdasan buatan.
-
-<p align="center">
-  <a href="https://github.com/Bahtiarrifaistudent/Simulasi-Brute-Force-attack">
-    <img src="https://github-readme-stats.vercel.app/api/pin/?username=Bahtiarrifaistudent&repo=Simulasi-Brute-Force-attack&hide_border=true&bg_color=0D0221&title_color=E879F9&icon_color=22D3EE&text_color=C4B5FD" width="49%"/>
-  </a>
-  <a href="https://github.com/Bahtiarrifaistudent/Penanganan-Brute-Force-Attack">
-    <img src="https://github-readme-stats.vercel.app/api/pin/?username=Bahtiarrifaistudent&repo=Penanganan-Brute-Force-Attack&hide_border=true&bg_color=0D0221&title_color=E879F9&icon_color=22D3EE&text_color=C4B5FD" width="49%"/>
-  </a>
-  <a href="https://github.com/Bahtiarrifaistudent/Asisten-20berbasis-20NLP-20Polindra">
-    <img src="https://github-readme-stats.vercel.app/api/pin/?username=Bahtiarrifaistudent&repo=Asisten-20berbasis-20NLP-20Polindra&hide_border=true&bg_color=0D0221&title_color=E879F9&icon_color=22D3EE&text_color=C4B5FD" width="49%"/>
-  </a>
-  <a href="https://github.com/Bahtiarrifaistudent/ricescanai">
-    <img src="https://github-readme-stats.vercel.app/api/pin/?username=Bahtiarrifaistudent&repo=ricescanai&hide_border=true&bg_color=0D0221&title_color=E879F9&icon_color=22D3EE&text_color=C4B5FD" width="49%"/>
-  </a>
-</p>
-
-<p align="center">
-  <img src="https://skillicons.dev/icons?i=py,sklearn,tensorflow&theme=dark"/>
-  <br/>
-  <img src="https://img.shields.io/badge/Jupyter-0D0221?style=flat-square&logo=jupyter&logoColor=F37626"/>
-  <img src="https://img.shields.io/badge/Kali_Linux-0D0221?style=flat-square&logo=kalilinux&logoColor=557C94"/>
-  <img src="https://img.shields.io/badge/Wireshark-0D0221?style=flat-square&logo=wireshark&logoColor=1679A7"/>
-  <img src="https://img.shields.io/badge/OWASP-0D0221?style=flat-square&logo=owasp&logoColor=white"/>
-</p>
-</details>
-<!-- ======================= akhir blok opsional ======================= -->
 
 ## Contribution Snake
 
